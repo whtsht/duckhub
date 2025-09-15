@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "connections": "Connections",
+    "adapters": "Adapters",
+    "models": "Models",
+    "dashboards": "Dashboards",
+    "query": "Query",
+    "pipeline": "Pipeline",
+    "graph": "Dependency Graph",
+    "settings": "Settings"
+  },
+  "connections": {
+    "title": "Connections",
+    "create": "Create New",
+    "empty": {
+      "message": "No connections",
+      "action": "Create your first connection"
+    },
+    "create_success": "Connection \"{name}\" created successfully",
+    "edit": {
+      "success": "Connection \"{name}\" updated successfully"
+    },
+    "delete": {
+      "confirm": "Delete connection \"{name}\"?",
+      "success": "Connection \"{name}\" deleted successfully"
+    },
+    "error": {
+      "general": "An error occurred: {error}"
+    },
+    "detail": {
+      "title": "Connection Details",
+      "edit": "Edit",
+      "delete": "Delete",
+      "test": "Test Connection",
+      "connection_info": "Connection Information",
+      "type": "Type",
+      "database_path": "Database Path",
+      "base_path": "Base Path",
+      "host": "Host",
+      "port": "Port",
+      "database": "Database",
+      "username": "Username",
+      "bucket": "Bucket",
+      "region": "Region",
+      "default": "Default",
+      "endpoint_url": "Endpoint URL",
+      "connection_test": "Connection Test",
+      "test_description": "Test connection to SQLite database file."
+    },
+    "form": {
+      "title_create": "Create New Connection",
+      "title_edit": "Edit Connection",
+      "name_label": "Connection Name",
+      "name_placeholder": "e.g. my_database",
+      "type_label": "Connection Type",
+      "sqlite": {
+        "label": "SQLite",
+        "path_label": "Database Path",
+        "path_placeholder": "e.g. ./database.db",
+        "help": "Enter the path to your SQLite database file"
+      },
+      "mysql": {
+        "label": "MySQL",
+        "host_label": "Host",
+        "host_placeholder": "e.g. localhost",
+        "port_label": "Port",
+        "port_placeholder": "3306",
+        "database_label": "Database Name",
+        "database_placeholder": "e.g. myapp_db",
+        "username_label": "Username",
+        "username_placeholder": "e.g. root",
+        "password_label": "Password",
+        "password_placeholder": "Password"
+      },
+      "postgresql": {
+        "label": "PostgreSQL",
+        "host_label": "Host",
+        "host_placeholder": "e.g. localhost",
+        "port_label": "Port",
+        "port_placeholder": "5432",
+        "database_label": "Database Name",
+        "database_placeholder": "e.g. myapp_db",
+        "username_label": "Username",
+        "username_placeholder": "e.g. postgres",
+        "password_label": "Password",
+        "password_placeholder": "Password"
+      },
+      "s3": {
+        "label": "S3",
+        "bucket_label": "Bucket Name",
+        "bucket_placeholder": "e.g. my-data-bucket",
+        "region_label": "Region",
+        "region_placeholder": "e.g. us-east-1",
+        "endpoint_label": "Endpoint URL (Optional)",
+        "endpoint_placeholder": "e.g. http://localhost:9000 (for MinIO)",
+        "auth_method_label": "Authentication Method",
+        "auth_credential_chain": "AWS Credential Chain",
+        "auth_explicit": "Explicit Access Keys",
+        "access_key_id_label": "Access Key ID",
+        "access_key_id_placeholder": "AKIA...",
+        "secret_access_key_label": "Secret Access Key",
+        "secret_access_key_placeholder": "Secret key",
+        "path_style_access_label": "Use path-style access (for MinIO)"
+      },
+      "localfile": {
+        "label": "Local File",
+        "path_label": "Base Path",
+        "path_placeholder": "e.g. ./data",
+        "help": "Enter the path to the directory containing your files"
+      },
+      "submit_create": "Create",
+      "submit_update": "Update",
+      "test_connection": "Test Connection",
+      "testing": "Testing...",
+      "test_success": "Connection test successful",
+      "test_error": "Connection test failed: {error}"
+    }
+  },
+  "adapters": {
+    "title": "Adapters",
+    "create": "Create New",
+    "empty": {
+      "message": "No adapters",
+      "action": "Create your first adapter"
+    },
+    "select_message": "Select an adapter to view details",
+    "create_success": "Adapter \"{name}\" created successfully",
+    "delete": {
+      "confirm": "Delete adapter \"{name}\"?",
+      "success": "Adapter \"{name}\" deleted successfully"
+    },
+    "edit": {
+      "success": "Adapter \"{name}\" updated successfully"
+    },
+    "error": {
+      "general": "An error occurred: {error}"
+    },
+    "detail": {
+      "title": "Adapter Details",
+      "edit": "Edit",
+      "delete": "Delete",
+
+      "connection_name": "Connection Name",
+      "description": "Description",
+      "data_source": "Data Source",
+      "file_path": "File Path",
+      "format": "Format",
+      "compression": "Compression",
+      "delimiter": "Delimiter",
+      "header_row": "Header Row",
+      "has_header": "Yes",
+      "no_header": "No",
+      "table_name": "Table Name",
+      "columns": "Column Definitions",
+      "column_name": "Column Name",
+      "column_type": "Type",
+      "column_description": "Description"
+    },
+    "source_type": {
+      "file": "File",
+      "database": "Database"
+    },
+    "form": {
+      "title_create": "Create New Adapter",
+      "title_edit": "Edit Adapter",
+      "name_label": "Adapter Name",
+      "name_placeholder": "e.g. sales_data",
+      "connection_label": "Connection Name",
+      "connection_placeholder": "e.g. local",
+      "description_label": "Description (optional)",
+      "description_placeholder": "Enter adapter description",
+      "source_type_label": "Data Source Type",
+      "source_file": "File",
+      "source_database": "Database",
+      "file_path_label": "File Path",
+      "file_path_placeholder": "e.g. data/sales_*.csv",
+      "format_label": "Format",
+      "table_name_label": "Table Name",
+      "table_name_placeholder": "e.g. users",
+      "schema_label": "Schema Definition",
+      "no_columns": "No columns defined",
+      "column_name_placeholder": "Column name",
+      "select_type": "Select type",
+      "column_description_placeholder": "Description (optional)",
+      "add_column": "Add Column",
+      "remove_column": "Remove column",
+      "test_schema": "Test Schema",
+      "testing_schema": "Testing Schema...",
+      "schema_test_success": "Schema validation successful",
+      "schema_test_error": "Schema validation failed: {error}",
+      "get_schema": "Auto-Import Schema",
+      "getting_schema": "Importing Schema...",
+      "get_schema_success": "Schema imported successfully ({count} columns)",
+      "get_schema_error": "Schema import failed: {error}",
+      "replace_columns_confirm": "This will replace existing columns. Continue?",
+      "submit_create": "Create",
+      "submit_update": "Update"
+    },
+    "format_options": {
+      "csv": "CSV",
+      "json": "JSON",
+      "parquet": "Parquet"
+    }
+  },
+  "models": {
+    "title": "Models",
+    "create": "Create New",
+    "empty": {
+      "message": "No models",
+      "action": "Create your first model"
+    },
+    "create_success": "Model \"{name}\" created successfully",
+    "delete": {
+      "confirm": "Delete model?",
+      "success": "Model \"{name}\" deleted successfully"
+    },
+    "edit": {
+      "success": "Model \"{name}\" updated successfully"
+    },
+    "error": {
+      "general": "An error occurred: {error}"
+    },
+    "detail": {
+      "title": "Model Details",
+      "edit": "Edit",
+      "delete": "Delete",
+      "run": "Run",
+      "description": "Description",
+      "sql_query": "SQL Query"
+    },
+    "form": {
+      "title_create": "Create New Model",
+      "title_edit": "Edit Model",
+      "name_label": "Model Name",
+      "name_placeholder": "e.g., user_stats",
+      "path_label": "Path",
+      "path_placeholder": "e.g., marts/user_stats",
+      "description_label": "Description (optional)",
+      "description_placeholder": "Enter description for this model",
+      "sql_label": "SQL Query",
+      "sql_placeholder": "SELECT * FROM users WHERE created_at >= '2024-01-01'",
+      "depends": "Dependencies (Optional)",
+      "depends_placeholder": "e.g., staging.users, staging.orders (comma-separated)",
+      "submit_create": "Create",
+      "submit_update": "Update"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Configure application settings",
+    "language": {
+      "title": "Language",
+      "description": "Select display language"
+    },
+    "theme": {
+      "title": "Theme",
+      "description": "Select appearance"
+    }
+  },
+  "pipeline": {
+    "title": "Pipeline History",
+    "empty": "No pipeline executions yet",
+    "run_date": "Run Date",
+    "status": "Status",
+    "duration": "Duration",
+    "tasks": "Tasks",
+    "view_details": "View Details",
+    "error_message": "Error Message",
+    "task_name": "Task Name",
+    "task_status": "Status",
+    "started_at": "Started At",
+    "completed_at": "Completed At",
+    "run_success": "Pipeline execution started successfully",
+    "node_run_success": "Node {node} execution started successfully",
+    "phase": {
+      "waiting": "Waiting",
+      "running": "Running",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "detail_labels": {
+      "started": "Started:",
+      "completed": "Completed:",
+      "duration": "Duration:",
+      "tasks": "Tasks",
+      "started_time": "Started: {time}",
+      "completed_time": "Completed: {time}",
+      "duration_time": "Duration: {duration}"
+    }
+  },
+  "graph": {
+    "title": "Dependency Graph",
+    "migrate": "Migrate",
+    "run": "Run Pipeline",
+    "refresh": "Refresh",
+    "migrate_tooltip": "Migrate database schema and update dependency graph",
+    "run_tooltip": "Execute pipeline with current configuration",
+    "refresh_tooltip": "Refresh pipeline graph",
+    "empty_state": {
+      "title": "No Pipeline Found",
+      "description": "Create adapters and models to see your data pipeline graph here."
+    },
+    "status_labels": {
+      "last_updated": "Last Updated:",
+      "status": "Status:",
+      "started": "Started:",
+      "completed": "Completed:",
+      "pipeline_status": "Latest Pipeline {status}",
+      "completed_tasks": "({completed} / {total} completed)",
+      "started_at": "Started: {time}"
+    },
+    "run_node": "Run Node"
+  },
+  "query": {
+    "title": "Query Panel",
+    "create": "New Query",
+    "empty": "No saved queries",
+    "create_success": "Query \"{name}\" saved successfully",
+    "execute": "Execute",
+    "executing": "Executing...",
+    "save_query": "Save Query",
+    "saved_queries": "Saved Queries",
+    "name_label": "Query Name",
+    "description_label": "Description (optional)",
+    "sql_placeholder": "Enter your SQL query here... (Ctrl+Enter to execute)",
+    "name_placeholder": "Enter query name",
+    "description_placeholder": "Enter description (optional)",
+    "query_required": "SQL query is required",
+    "name_required": "Query name is required",
+    "delete": "Delete",
+    "refresh": "Refresh",
+    "no_results": "No results",
+    "error": {
+      "general": "An error occurred: {error}",
+      "execution": "Query execution failed"
+    },
+    "delete_confirm": "Are you sure you want to delete query \"{name}\"?",
+    "delete_success": "Query \"{name}\" deleted successfully",
+    "edit_success": "Query \"{name}\" updated successfully",
+    "detail": {
+      "description": "Description",
+      "sql_query": "SQL Query"
+    },
+    "results_title": "Results ({count} rows)",
+    "form": {
+      "title_create": "Create New Query",
+      "title_edit": "Edit Query",
+      "sql_label": "SQL Query",
+      "sql_hint": "Ctrl+Enter to save"
+    },
+    "editor": {
+      "execution_hint": "Press Ctrl+Enter to execute",
+      "error_title": "Error",
+      "no_results_found": "No results found.",
+      "column_default": "Column",
+      "results_title": "Results ({rows} rows, {columns} columns)"
+    }
+  },
+  "dashboards": {
+    "title": "Dashboards",
+    "empty": "No dashboards created yet",
+    "create_success": "Dashboard \"{name}\" created successfully",
+    "select_dashboard_description": "Choose a dashboard from the sidebar to view its chart",
+    "detail": {
+      "description": "Description"
+    },
+    "new": {
+      "button": "New",
+      "title": "Create Dashboard",
+      "label": "Create new dashboard"
+    },
+    "edit": {
+      "title": "Edit Dashboard",
+      "label": "Edit dashboard",
+      "success": "Dashboard \"{name}\" updated successfully"
+    },
+    "delete": {
+      "confirm": "Are you sure you want to delete this dashboard?",
+      "success": "Dashboard \"{name}\" deleted successfully",
+      "label": "Delete dashboard {name}"
+    },
+    "error": {
+      "general": "An error occurred: {error}"
+    },
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Enter dashboard name",
+      "description": "Description",
+      "description_placeholder": "Enter description (optional)",
+      "query": "Query",
+      "select_query": "Select a query",
+      "chart_type": "Chart Type",
+      "x_column": "X Column",
+      "x_column_placeholder": "Enter X axis column name",
+      "y_column": "Y Column",
+      "y_column_placeholder": "Enter Y axis column name"
+    },
+    "chart_types": {
+      "line": "Line Chart",
+      "bar": "Bar Chart"
+    },
+    "query": "Query",
+    "loading_chart": "Loading chart data...",
+    "no_data": "No data available for this chart"
+  },
+  "common": {
+    "loading": "Loading...",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "submit": "Submit",
+    "create": "Create",
+    "update": "Update",
+    "edit": "Edit",
+    "delete": "Delete",
+    "select_connection": "Select a connection",
+    "select_adapter": "Select an adapter",
+    "select_query": "Select a query",
+    "select_model": "Select a model",
+    "select_adapter_aria": "Select adapter {name}",
+    "select_connection_aria": "Select connection {name}",
+    "select_model_aria": "Select model {path}",
+    "create_connection": "Create Connection",
+    "create_adapter": "Create Adapter",
+    "create_model": "Create Model",
+    "select_dashboard": "Select a Dashboard",
+    "create_dashboard": "Create Dashboard",
+    "create_query": "Create Query",
+    "close_toast": "Close toast",
+    "navigation": {
+      "connections_aria": "Navigate to connections",
+      "adapters_aria": "Navigate to adapters",
+      "models_aria": "Navigate to models",
+      "dashboards_aria": "Navigate to dashboards",
+      "query_aria": "Navigate to query panel",
+      "graph_aria": "Navigate to dependency graph",
+      "pipeline_aria": "Navigate to pipeline history",
+      "settings_aria": "Navigate to settings"
+    },
+    "forms": {
+      "edit_aria": "Edit {name}",
+      "delete_aria": "Delete {name}",
+      "save_aria": "Save changes",
+      "cancel_aria": "Cancel changes",
+      "test_connection_aria": "Test database connection",
+      "refresh_aria": "Refresh data"
+    }
+  }
+}

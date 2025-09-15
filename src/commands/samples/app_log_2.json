@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2024-03-02T09:00:00Z",
+    "user_id": 5,
+    "action": "signup",
+    "device": "desktop",
+    "duration": 240
+  },
+  {
+    "timestamp": "2024-03-02T09:30:00Z",
+    "user_id": 6,
+    "action": "view_profile",
+    "device": "mobile",
+    "duration": 60
+  },
+  {
+    "timestamp": "2024-03-02T10:00:00Z",
+    "user_id": 7,
+    "action": "search_product",
+    "device": "tablet",
+    "duration": 75
+  },
+  {
+    "timestamp": "2024-03-02T10:30:00Z",
+    "user_id": 8,
+    "action": "view_product",
+    "device": "desktop",
+    "duration": 90
+  },
+  {
+    "timestamp": "2024-03-02T11:00:00Z",
+    "user_id": 9,
+    "action": "logout",
+    "device": "mobile",
+    "duration": 15
+  }
+]

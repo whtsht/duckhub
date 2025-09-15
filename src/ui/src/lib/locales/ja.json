@@ -1,0 +1,450 @@
+{
+  "navigation": {
+    "connections": "接続",
+    "adapters": "アダプター",
+    "models": "モデル",
+    "dashboards": "ダッシュボード",
+    "query": "クエリ",
+    "pipeline": "パイプライン",
+    "graph": "依存グラフ",
+    "settings": "設定"
+  },
+  "connections": {
+    "title": "接続",
+    "create": "新規作成",
+    "empty": {
+      "message": "接続がありません",
+      "action": "最初の接続を作成"
+    },
+    "create_success": "接続「{name}」を作成しました",
+    "edit": {
+      "success": "接続「{name}」を更新しました"
+    },
+    "delete": {
+      "confirm": "接続「{name}」を削除しますか？",
+      "success": "接続「{name}」を削除しました"
+    },
+    "error": {
+      "general": "エラーが発生しました: {error}"
+    },
+    "detail": {
+      "title": "接続の詳細",
+      "edit": "編集",
+      "delete": "削除",
+      "test": "接続テスト",
+      "connection_info": "接続情報",
+      "type": "タイプ",
+      "database_path": "データベースパス",
+      "base_path": "ベースパス",
+      "host": "ホスト",
+      "port": "ポート",
+      "database": "データベース",
+      "username": "ユーザー名",
+      "bucket": "バケット",
+      "region": "リージョン",
+      "default": "デフォルト",
+      "endpoint_url": "エンドポイントURL",
+      "connection_test": "接続テスト",
+      "test_description": "SQLiteデータベースファイルへの接続をテストできます。"
+    },
+    "form": {
+      "title_create": "新規接続作成",
+      "title_edit": "接続編集",
+      "name_label": "接続名",
+      "name_placeholder": "例: my_database",
+      "type_label": "接続タイプ",
+      "sqlite": {
+        "label": "SQLite",
+        "path_label": "データベースパス",
+        "path_placeholder": "例: ./database.db",
+        "help": "SQLiteデータベースファイルへのパスを入力してください"
+      },
+      "mysql": {
+        "label": "MySQL",
+        "host_label": "ホスト",
+        "host_placeholder": "例: localhost",
+        "port_label": "ポート",
+        "port_placeholder": "3306",
+        "database_label": "データベース名",
+        "database_placeholder": "例: myapp_db",
+        "username_label": "ユーザー名",
+        "username_placeholder": "例: root",
+        "password_label": "パスワード",
+        "password_placeholder": "パスワード"
+      },
+      "postgresql": {
+        "label": "PostgreSQL",
+        "host_label": "ホスト",
+        "host_placeholder": "例: localhost",
+        "port_label": "ポート",
+        "port_placeholder": "5432",
+        "database_label": "データベース名",
+        "database_placeholder": "例: myapp_db",
+        "username_label": "ユーザー名",
+        "username_placeholder": "例: postgres",
+        "password_label": "パスワード",
+        "password_placeholder": "パスワード"
+      },
+      "s3": {
+        "label": "S3",
+        "bucket_label": "バケット名",
+        "bucket_placeholder": "例: my-data-bucket",
+        "region_label": "リージョン",
+        "region_placeholder": "例: us-east-1",
+        "endpoint_label": "エンドポイントURL（オプション）",
+        "endpoint_placeholder": "例: http://localhost:9000 (MinIOなど)",
+        "auth_method_label": "認証方法",
+        "auth_credential_chain": "AWS認証チェーン",
+        "auth_explicit": "アクセスキー指定",
+        "access_key_id_label": "アクセスキーID",
+        "access_key_id_placeholder": "AKIA...",
+        "secret_access_key_label": "シークレットアクセスキー",
+        "secret_access_key_placeholder": "シークレットキー",
+        "path_style_access_label": "パススタイルアクセスを使用（MinIOなど）"
+      },
+      "localfile": {
+        "label": "ローカルファイル",
+        "path_label": "ベースパス",
+        "path_placeholder": "例: ./data",
+        "help": "ファイルが格納されているディレクトリへのパスを入力してください"
+      },
+      "submit_create": "作成",
+      "submit_update": "更新",
+      "test_connection": "接続テスト",
+      "testing": "テスト中...",
+      "test_success": "接続テストが成功しました",
+      "test_error": "接続テストが失敗しました: {error}"
+    }
+  },
+  "adapters": {
+    "title": "アダプター",
+    "create": "新規作成",
+    "empty": {
+      "message": "アダプターがありません",
+      "action": "最初のアダプターを作成"
+    },
+    "select_message": "アダプターを選択して詳細を表示",
+    "create_success": "アダプター「{name}」を作成しました",
+    "delete": {
+      "confirm": "アダプター「{name}」を削除しますか？",
+      "success": "アダプター「{name}」を削除しました"
+    },
+    "edit": {
+      "success": "アダプター「{name}」を更新しました"
+    },
+    "error": {
+      "general": "エラーが発生しました: {error}"
+    },
+    "detail": {
+      "title": "アダプターの詳細",
+      "edit": "編集",
+      "delete": "削除",
+
+      "connection_name": "接続名",
+      "description": "説明",
+      "data_source": "データソース",
+      "file_path": "ファイルパス",
+      "format": "フォーマット",
+      "compression": "圧縮",
+      "delimiter": "区切り文字",
+      "header_row": "ヘッダー行",
+      "has_header": "あり",
+      "no_header": "なし",
+      "table_name": "テーブル名",
+      "columns": "カラム定義",
+      "column_name": "カラム名",
+      "column_type": "型",
+      "column_description": "説明"
+    },
+    "source_type": {
+      "file": "ファイル",
+      "database": "データベース"
+    },
+    "form": {
+      "title_create": "新規アダプター作成",
+      "title_edit": "アダプター編集",
+      "name_label": "アダプター名",
+      "name_placeholder": "例: sales_data",
+      "connection_label": "接続名",
+      "connection_placeholder": "例: local",
+      "description_label": "説明（任意）",
+      "description_placeholder": "アダプターの説明を入力",
+      "source_type_label": "データソースタイプ",
+      "source_file": "ファイル",
+      "source_database": "データベース",
+      "file_path_label": "ファイルパス",
+      "file_path_placeholder": "例: data/sales_*.csv",
+      "format_label": "フォーマット",
+      "table_name_label": "テーブル名",
+      "table_name_placeholder": "例: users",
+      "schema_label": "スキーマ定義",
+      "no_columns": "カラムが定義されていません",
+      "column_name_placeholder": "カラム名",
+      "select_type": "型を選択",
+      "column_description_placeholder": "説明（任意）",
+      "add_column": "カラムを追加",
+      "remove_column": "カラムを削除",
+      "test_schema": "スキーマテスト",
+      "testing_schema": "スキーマテスト中...",
+      "schema_test_success": "スキーマ検証が成功しました",
+      "schema_test_error": "スキーマ検証が失敗しました: {error}",
+      "get_schema": "スキーマを自動取得",
+      "getting_schema": "スキーマ取得中...",
+      "get_schema_success": "スキーマを取得しました（{count}カラム）",
+      "get_schema_error": "スキーマ取得に失敗しました: {error}",
+      "replace_columns_confirm": "既存のカラムを置き換えます。続行しますか？",
+      "submit_create": "作成",
+      "submit_update": "更新"
+    },
+    "format_options": {
+      "csv": "CSV",
+      "json": "JSON",
+      "parquet": "Parquet"
+    }
+  },
+  "models": {
+    "title": "モデル",
+    "create": "新規作成",
+    "empty": {
+      "message": "モデルがありません",
+      "action": "最初のモデルを作成"
+    },
+    "create_success": "モデル「{name}」を作成しました",
+    "delete": {
+      "confirm": "モデルを削除しますか？",
+      "success": "モデル「{name}」を削除しました"
+    },
+    "edit": {
+      "success": "モデル「{name}」を更新しました"
+    },
+    "error": {
+      "general": "エラーが発生しました: {error}"
+    },
+    "detail": {
+      "title": "モデルの詳細",
+      "edit": "編集",
+      "delete": "削除",
+      "run": "実行",
+      "description": "説明",
+      "sql_query": "SQLクエリ"
+    },
+    "form": {
+      "title_create": "新規モデル作成",
+      "title_edit": "モデル編集",
+      "name_label": "モデル名",
+      "name_placeholder": "例: user_stats",
+      "path_label": "パス",
+      "path_placeholder": "例: marts/user_stats",
+      "description_label": "説明（任意）",
+      "description_placeholder": "このモデルの説明を入力",
+      "sql_label": "SQLクエリ",
+      "sql_placeholder": "SELECT * FROM users WHERE created_at >= '2024-01-01'",
+      "depends": "依存関係（任意）",
+      "depends_placeholder": "例: staging.users, staging.orders（カンマ区切り）",
+      "submit_create": "作成",
+      "submit_update": "更新"
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "description": "アプリケーションの設定を行います",
+    "language": {
+      "title": "言語",
+      "description": "表示言語を選択"
+    },
+    "theme": {
+      "title": "テーマ",
+      "description": "外観を選択"
+    }
+  },
+  "pipeline": {
+    "title": "パイプライン履歴",
+    "empty": "パイプラインの実行履歴がありません",
+    "run_date": "実行日時",
+    "status": "ステータス",
+    "duration": "実行時間",
+    "tasks": "タスク",
+    "view_details": "詳細を表示",
+    "error_message": "エラーメッセージ",
+    "task_name": "タスク名",
+    "task_status": "ステータス",
+    "started_at": "開始時刻",
+    "completed_at": "完了時刻",
+    "run_success": "パイプラインの実行を開始しました",
+    "node_run_success": "ノード {node} の実行を開始しました",
+    "phase": {
+      "waiting": "待機中",
+      "running": "実行中",
+      "completed": "完了",
+      "failed": "失敗"
+    },
+    "detail_labels": {
+      "started": "開始:",
+      "completed": "完了:",
+      "duration": "実行時間:",
+      "tasks": "タスク",
+      "started_time": "開始: {time}",
+      "completed_time": "完了: {time}",
+      "duration_time": "実行時間: {duration}"
+    }
+  },
+  "graph": {
+    "title": "依存グラフ",
+    "migrate": "マイグレーション",
+    "run": "パイプライン実行",
+    "refresh": "更新",
+    "migrate_tooltip": "データベーススキーマをマイグレーションし、依存グラフを更新",
+    "run_tooltip": "現在の設定でパイプラインを実行",
+    "refresh_tooltip": "パイプライングラフを更新",
+    "empty_state": {
+      "title": "パイプラインが見つかりません",
+      "description": "アダプターとモデルを作成すると、データパイプライングラフがここに表示されます。"
+    },
+    "status_labels": {
+      "last_updated": "最終更新:",
+      "status": "ステータス:",
+      "started": "開始:",
+      "completed": "完了:",
+      "pipeline_status": "最新のパイプライン {status}",
+      "completed_tasks": "({completed} / {total} 完了)",
+      "started_at": "開始: {time}"
+    },
+    "run_node": "ノードを実行"
+  },
+  "query": {
+    "title": "クエリパネル",
+    "create": "新規クエリ",
+    "empty": "保存済みクエリがありません",
+    "create_success": "クエリ「{name}」を保存しました",
+    "execute": "実行",
+    "executing": "実行中...",
+    "save_query": "クエリを保存",
+    "saved_queries": "保存済みクエリ",
+    "name_label": "クエリ名",
+    "description_label": "説明（任意）",
+    "sql_placeholder": "SQLクエリを入力してください... (Ctrl+Enterで実行)",
+    "name_placeholder": "クエリ名を入力",
+    "description_placeholder": "説明を入力（任意）",
+    "query_required": "SQLクエリが必要です",
+    "name_required": "クエリ名が必要です",
+    "delete": "削除",
+    "refresh": "再読み込み",
+    "no_results": "結果がありません",
+    "error": {
+      "general": "エラーが発生しました: {error}",
+      "execution": "クエリの実行に失敗しました"
+    },
+    "delete_confirm": "クエリ「{name}」を削除しますか？",
+    "delete_success": "クエリ「{name}」を削除しました",
+    "edit_success": "クエリ「{name}」を更新しました",
+    "detail": {
+      "description": "説明",
+      "sql_query": "SQLクエリ"
+    },
+    "results_title": "結果 ({count} 行)",
+    "form": {
+      "title_create": "新規クエリ作成",
+      "title_edit": "クエリ編集",
+      "sql_label": "SQLクエリ",
+      "sql_hint": "Ctrl+Enterで保存"
+    },
+    "editor": {
+      "execution_hint": "Ctrl+Enterで実行",
+      "error_title": "エラー",
+      "no_results_found": "結果が見つかりませんでした。",
+      "column_default": "列",
+      "results_title": "結果 ({rows} 行、{columns} 列)"
+    }
+  },
+  "dashboards": {
+    "title": "ダッシュボード",
+    "empty": "ダッシュボードがまだ作成されていません",
+    "create_success": "ダッシュボード「{name}」を作成しました",
+    "select_dashboard_description": "サイドバーからダッシュボードを選択してチャートを表示してください",
+    "detail": {
+      "description": "説明"
+    },
+    "new": {
+      "button": "新規作成",
+      "title": "ダッシュボードを作成",
+      "label": "新しいダッシュボードを作成"
+    },
+    "edit": {
+      "title": "ダッシュボードを編集",
+      "label": "ダッシュボードを編集",
+      "success": "ダッシュボード「{name}」を更新しました"
+    },
+    "delete": {
+      "confirm": "このダッシュボードを削除しますか？",
+      "success": "ダッシュボード「{name}」を削除しました",
+      "label": "ダッシュボード{name}を削除"
+    },
+    "error": {
+      "general": "エラーが発生しました: {error}"
+    },
+    "form": {
+      "name": "名前",
+      "name_placeholder": "ダッシュボード名を入力",
+      "description": "説明",
+      "description_placeholder": "説明を入力（任意）",
+      "query": "クエリ",
+      "select_query": "クエリを選択",
+      "chart_type": "チャートタイプ",
+      "x_column": "X軸列",
+      "x_column_placeholder": "X軸の列名を入力",
+      "y_column": "Y軸列",
+      "y_column_placeholder": "Y軸の列名を入力"
+    },
+    "chart_types": {
+      "line": "線グラフ",
+      "bar": "棒グラフ"
+    },
+    "query": "クエリ",
+    "loading_chart": "チャートデータを読み込み中...",
+    "no_data": "このチャートに利用可能なデータがありません"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "retry": "再試行",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "submit": "送信",
+    "create": "作成",
+    "update": "更新",
+    "edit": "編集",
+    "delete": "削除",
+    "select_connection": "接続を選択してください",
+    "select_adapter": "アダプターを選択してください",
+    "select_query": "クエリを選択してください",
+    "select_model": "モデルを選択してください",
+    "select_adapter_aria": "アダプター{name}を選択",
+    "select_connection_aria": "接続{name}を選択",
+    "select_model_aria": "モデル{path}を選択",
+    "create_connection": "接続を作成",
+    "create_adapter": "アダプターを作成",
+    "create_model": "モデルを作成",
+    "select_dashboard": "ダッシュボードを選択してください",
+    "create_dashboard": "ダッシュボードを作成",
+    "create_query": "クエリを作成",
+    "close_toast": "トーストを閉じる",
+    "navigation": {
+      "connections_aria": "接続画面に移動",
+      "adapters_aria": "アダプター画面に移動",
+      "models_aria": "モデル画面に移動",
+      "dashboards_aria": "ダッシュボード画面に移動",
+      "query_aria": "クエリパネルに移動",
+      "graph_aria": "依存グラフに移動",
+      "pipeline_aria": "パイプライン履歴に移動",
+      "settings_aria": "設定画面に移動"
+    },
+    "forms": {
+      "edit_aria": "{name}を編集",
+      "delete_aria": "{name}を削除",
+      "save_aria": "変更を保存",
+      "cancel_aria": "変更をキャンセル",
+      "test_connection_aria": "データベース接続をテスト",
+      "refresh_aria": "データを更新"
+    }
+  }
+}

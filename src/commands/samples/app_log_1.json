@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2024-03-01T10:15:00Z",
+    "user_id": 1,
+    "action": "login",
+    "device": "mobile",
+    "duration": 120
+  },
+  {
+    "timestamp": "2024-03-01T10:30:00Z",
+    "user_id": 2,
+    "action": "view_product",
+    "device": "desktop",
+    "duration": 45
+  },
+  {
+    "timestamp": "2024-03-01T10:45:00Z",
+    "user_id": 3,
+    "action": "add_to_cart",
+    "device": "mobile",
+    "duration": 30
+  },
+  {
+    "timestamp": "2024-03-01T11:00:00Z",
+    "user_id": 1,
+    "action": "purchase",
+    "device": "mobile",
+    "duration": 180
+  },
+  {
+    "timestamp": "2024-03-01T11:15:00Z",
+    "user_id": 4,
+    "action": "login",
+    "device": "tablet",
+    "duration": 90
+  }
+]

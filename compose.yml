@@ -1,0 +1,113 @@
+services:
+  catalog_db_mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: testpass
+      MYSQL_DATABASE: duckhub_test
+      MYSQL_USER: duckhub
+      MYSQL_PASSWORD: testpass
+    command: --default-authentication-plugin=mysql_native_password
+    entrypoint: >
+      sh -c "
+        docker-entrypoint.sh mysqld &
+        until mysqladmin ping -h 127.0.0.1 --silent; do sleep 1; done
+        mysql -u root -ptestpass -e \"GRANT ALL PRIVILEGES ON *.* TO 'duckhub'@'%';\"
+        wait
+      "
+    ports:
+      - "3308:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - catalog_mysql_data:/var/lib/mysql
+
+  catalog_db_postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: testpass
+      POSTGRES_DB: duckhub_test
+      POSTGRES_USER: duckhub
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U duckhub"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - catalog_postgres_data:/var/lib/postgresql/data
+
+  datasource_mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: datasourcepass
+      MYSQL_DATABASE: datasource_test
+      MYSQL_USER: datasource
+      MYSQL_PASSWORD: datasourcepass
+    command: --default-authentication-plugin=mysql_native_password
+    entrypoint: >
+      sh -c "
+        docker-entrypoint.sh mysqld &
+        until mysqladmin ping -h 127.0.0.1 --silent; do sleep 1; done
+        mysql -u root -pdatasourcepass -e \"GRANT ALL PRIVILEGES ON *.* TO 'datasource'@'%';\"
+        wait
+      "
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - datasource_mysql_data:/var/lib/mysql
+
+  datasource_postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: datasourcepass
+      POSTGRES_DB: datasource_test
+      POSTGRES_USER: datasource
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U datasource"]
+      timeout: 20s
+      retries: 10
+    volumes:
+      - datasource_postgres_data:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: user
+      MINIO_ROOT_PASSWORD: password
+    ports:
+      - "9010:9000"
+      - "9001:9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    volumes:
+      - minio_data:/data
+
+  minio-init:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until /usr/bin/mc config host add minio http://minio:9000 user password; do sleep 1; done;
+      /usr/bin/mc mb minio/test-bucket || true;
+      /usr/bin/mc policy set public minio/test-bucket || true;
+      "
+
+volumes:
+  catalog_mysql_data:
+  catalog_postgres_data:
+  datasource_mysql_data:
+  datasource_postgres_data:
+  minio_data:
